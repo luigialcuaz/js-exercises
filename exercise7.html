@@ -7,6 +7,40 @@
     <title>Exercise 7</title>
   </head>
   <body>
-    <script></script>
+    <script>
+      function toUpper(strArray) {
+        const newArray = [];
+        strArray.forEach((str) => {
+          newArray.push(str.toUpperCase());
+        });
+
+        console.log(newArray);
+      }
+
+      toUpper(["hello", "world"]);
+
+      function arrayDouble(array) {
+        const newArray = [];
+        array.forEach((element) => {
+          newArray.push(element);
+          newArray.push(element);
+        });
+
+        console.log(newArray);
+      }
+
+      arrayDouble(["luigi", "waluigi"]);
+
+      function arraySum(numArray) {
+        let total = 0;
+        numArray.forEach((num) => {
+          total = total + num;
+        });
+
+        console.log(total);
+      }
+
+      arraySum([0, 2, 5, -4, 12]);
+    </script>
   </body>
 </html>
