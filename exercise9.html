@@ -7,6 +7,37 @@
     <title>Exercise 9</title>
   </head>
   <body>
-    <script></script>
+    <script>
+      const cart = document.createElement("div");
+      cart.id = "cart";
+      const apple = document.createElement("button");
+      apple.innerText = "Apple";
+      apple.setAttribute("onclick", "addItem('apple')");
+      const tomato = document.createElement("button");
+      tomato.innerText = "Tomato";
+      tomato.setAttribute("onclick", "addItem('tomato')");
+      const eggs = document.createElement("button");
+      eggs.innerText = "Eggs";
+      eggs.setAttribute("onclick", "addItem('eggs')");
+      const clear = document.createElement("button");
+      clear.innerText = "Clear";
+      clear.setAttribute("onclick", "clearCart()");
+
+      document.body.appendChild(apple);
+      document.body.appendChild(tomato);
+      document.body.appendChild(eggs);
+      document.body.appendChild(clear);
+      document.body.appendChild(cart);
+
+      function addItem(item) {
+        const newDiv = document.createElement("div");
+        newDiv.innerText = item;
+        cart.appendChild(newDiv);
+      }
+
+      function clearCart() {
+        cart.innerHTML = "";
+      }
+    </script>
   </body>
 </html>
