@@ -7,6 +7,26 @@
     <title>Exercise 5</title>
   </head>
   <body>
-    <script></script>
+    <script>
+      const clickButton = document.createElement("button");
+      clickButton.innerHTML = "Click Me";
+      document.body.appendChild(clickButton);
+
+      document.title = "Exercise 5 js";
+
+      let todo1 = "Get groceries";
+      let todo2 = "Wash car";
+      let todo3 = "Make dinner";
+
+      let newDiv = document.createElement("div");
+      newDiv.innerHTML = todo1;
+      document.body.appendChild(newDiv);
+      newDiv = document.createElement("div");
+      newDiv.innerHTML = todo2;
+      document.body.appendChild(newDiv);
+      newDiv = document.createElement("div");
+      newDiv.innerHTML = todo3;
+      document.body.appendChild(newDiv);
+    </script>
   </body>
 </html>
