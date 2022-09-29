@@ -7,6 +7,52 @@
     <title>Exercise 10</title>
   </head>
   <body>
-    <script></script>
+    <div id="receipt"></div>
+    <script>
+      function cartTotal(cartArray) {
+        let total = 0;
+        cartArray.forEach((item) => {
+          total = total + item.price * item.quantity;
+        });
+
+        console.log(total);
+      }
+
+      cartTotal([
+        { name: "Apple", price: 4, quantity: 3 },
+        { name: "Orange", price: 3, quantity: 5 },
+      ]);
+
+      const receipt = document.getElementById("receipt");
+
+      function displayReceipt(cartArray) {
+        let total = 0;
+        receipt.innerHTML = "";
+        cartArray.forEach((item) => {
+          const newDiv = document.createElement("div");
+          const current = item.price * item.quantity;
+          newDiv.innerText =
+            item.name +
+            " $" +
+            item.price +
+            " * " +
+            item.quantity +
+            " = $" +
+            current;
+
+          receipt.appendChild(newDiv);
+          total = total + current;
+        });
+
+        const totalDiv = document.createElement("div");
+        totalDiv.innerText = "Total = $" + total;
+        receipt.appendChild(totalDiv);
+      }
+
+      displayReceipt([
+        { name: "Apple", price: 4, quantity: 3 },
+        { name: "Orange", price: 3, quantity: 5 },
+      ]);
+    </script>
   </body>
 </html>
