@@ -7,6 +7,10 @@
     <title>Exercise 9</title>
   </head>
   <body>
+    <input type="text" id="textbox" />
+    <button id="cm-button">Convert to cm</button>
+    <button id="inch-button">Convert to inch</button>
+    <div id="result"></div>
     <script>
       const cart = document.createElement("div");
       cart.id = "cart";
@@ -37,6 +41,27 @@
 
       function clearCart() {
         cart.innerHTML = "";
+      }
+
+      const cmButton = document.getElementById("cm-button");
+      cmButton.setAttribute("onclick", "convertToCm()");
+      const inchButton = document.getElementById("inch-button");
+      inchButton.setAttribute("onclick", "convertToInch()");
+      const textbox = document.getElementById("textbox");
+      const resultDiv = document.getElementById("result");
+
+      function bloop() {
+        console.log("bloop");
+      }
+
+      function convertToInch() {
+        const conversion = +textbox.value / 2.54 + " in";
+        result.innerText = conversion;
+      }
+
+      function convertToCm() {
+        const conversion = +textbox.value * 2.54 + " cm";
+        result.innerText = conversion;
       }
     </script>
   </body>
