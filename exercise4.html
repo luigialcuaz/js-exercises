@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 4</title>
+  </head>
+  <body>
+    <button>Press me</button>
+    <div>Make dinner</div>
+    <div>Wash car</div>
+    <div>Get groceries</div>
+    <script>
+      document.title = "Exercise 4 js";
+
+      const nameDiv = document.createElement("div");
+      nameDiv.innerHTML = "Luigi";
+      document.body.appendChild(nameDiv);
+
+      document.body.appendChild((document.create("div").innerHTML = "testdiv"));
+    </script>
+  </body>
+</html>
