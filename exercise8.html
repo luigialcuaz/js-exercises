@@ -7,14 +7,80 @@
     <title>Exercise 8</title>
   </head>
   <body>
+    <button id="a-button" onclick="done()">todo</button>
     <script>
+      function done() {
+        let button = document.getElementById("a-button");
+        button.innerText = "done";
+      }
+
       const todoButton = document.createElement("button");
-      todoButton.innerHTML = "To Do";
-      todoButton.setAttribute("onclick=", "buttonClick()");
+      todoButton.innerText = "To Do";
+      todoButton.setAttribute("onclick", "buttonClick()");
       document.body.appendChild(todoButton);
 
       function buttonClick() {
-        todoButton.innerHTML = "Done";
+        todoButton.innerText = "Done";
+      }
+
+      const anotherButton = document.createElement("button");
+      anotherButton.innerText = "todo";
+      anotherButton.id = "todo-button";
+      anotherButton.setAttribute("onclick", "changeToDone()");
+      document.body.appendChild(anotherButton);
+
+      function changeToDone() {
+        let button = document.getElementById("todo-button");
+        button.innerText = "done";
+        console.log("changeToDone()");
+      }
+
+      const divCounter = document.createElement("div");
+      divCounter.innerText = 0;
+      divCounter.id = "counter";
+      document.body.appendChild(divCounter);
+
+      const upButton = document.createElement("button");
+      upButton.innerText = "Up";
+      upButton.setAttribute("onclick", "increase()");
+      document.body.appendChild(upButton);
+
+      const downButton = document.createElement("button");
+      downButton.innerText = "Down";
+      downButton.setAttribute("onclick", "decrease()");
+      document.body.appendChild(downButton);
+
+      let count = 0;
+
+      function increase() {
+        const counter = document.getElementById("counter");
+        count = count + 1;
+        counter.innerText = count;
+      }
+
+      function decrease() {
+        const counter = document.getElementById("counter");
+        count = count - 1;
+        counter.innerText = count;
+      }
+
+      const textbox = document.createElement("input");
+      textbox.id = "box";
+      textbox.setAttribute("type", "text");
+      document.body.appendChild(textbox);
+
+      const newButton = document.createElement("button");
+      newButton.setAttribute("onclick", "addDiv()");
+      newButton.innerText = "take text";
+      document.body.appendChild(newButton);
+
+      function addDiv() {
+        const box = document.getElementById("box");
+        const text = box.value;
+
+        const newDiv = document.createElement("div");
+        newDiv.innerText = text;
+        document.body.appendChild(newDiv);
       }
     </script>
   </body>
