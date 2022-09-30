@@ -10,20 +10,27 @@
     <script>
       let total = 0;
 
-      function createCart(foodArray) {
-        Object.keys(foodArray).forEach((food) => {
+      function createCart(foodPrices) {
+        const foodList = Object.keys(foodPrices);
+
+        foodList.forEach((food) => {
+          const price = foodPrices[food];
+
           const newDiv = document.createElement("div");
+          newDiv.innerText = food + " $" + price;
+
           const addButton = document.createElement("button");
           addButton.innerText = "Add";
-          addButton.setAttribute("onclick", "cartTotal(food)");
-          newDiv.innerText = food;
+          addButton.onclick = function () {
+            total = total + price;
+            console.log(total);
+          };
+          newDiv.appendChild(addButton);
+
+          document.body.appendChild(newDiv);
         });
       }
 
-      function cartTotal(foodPrice) {
-        total = total + foodPrice;
-        console.log(total);
-      }
       createCart({
         Apple: 3,
         Orange: 4,
