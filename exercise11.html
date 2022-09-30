@@ -7,6 +7,28 @@
     <title>Exercise 11</title>
   </head>
   <body>
-    <script></script>
+    <script>
+      let total = 0;
+
+      function createCart(foodArray) {
+        Object.keys(foodArray).forEach((food) => {
+          const newDiv = document.createElement("div");
+          const addButton = document.createElement("button");
+          addButton.innerText = "Add";
+          addButton.setAttribute("onclick", "cartTotal(food)");
+          newDiv.innerText = food;
+        });
+      }
+
+      function cartTotal(foodPrice) {
+        total = total + foodPrice;
+        console.log(total);
+      }
+      createCart({
+        Apple: 3,
+        Orange: 4,
+        Egg: 3,
+      });
+    </script>
   </body>
 </html>
