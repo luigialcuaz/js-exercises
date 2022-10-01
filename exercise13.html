@@ -44,6 +44,79 @@
       }
 
       console.log(small([104, 54, -44, 14, 41]));
+
+      function pickApples(fruitArray) {
+        let max = 2;
+        return fruitArray.filter((fruit) => {
+          if (max > 0 && fruit === "apple") {
+            max = max - 1;
+            return false;
+          }
+
+          return true;
+        });
+      }
+
+      console.log(
+        pickApples(["cherry", "apple", "orange", "apple", "banana", "apple"])
+      );
+
+      function pickFruits(fruitArray) {
+        let maxApples = 2;
+        let maxOranges = 1;
+
+        return fruitArray.filter((fruit) => {
+          if (fruit === "apple" && maxApples > 0) {
+            maxApples = maxApples - 1;
+            return false;
+          } else if (fruit === "orange" && maxOranges > 0) {
+            maxOranges = maxOranges - 1;
+            return false;
+          }
+
+          return true;
+        });
+      }
+
+      console.log(
+        pickFruits([
+          "cherry",
+          "apple",
+          "orange",
+          "apple",
+          "banana",
+          "apple",
+          "orange",
+        ])
+      );
+
+      function pickLastApples(fruitArray) {
+        let maxApples = 2;
+        const reverseArray = fruitArray.reverse();
+
+        const filteredArray = reverseArray.filter((fruit) => {
+          if (fruit === "apple" && maxApples > 0) {
+            maxApples = maxApples - 1;
+            return false;
+          }
+
+          return true;
+        });
+
+        return filteredArray.reverse();
+      }
+
+      console.log(
+        pickLastApples([
+          "cherry",
+          "apple",
+          "orange",
+          "apple",
+          "banana",
+          "apple",
+          "orange",
+        ])
+      );
     </script>
   </body>
 </html>
