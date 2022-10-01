@@ -7,6 +7,43 @@
     <title>Exercise 13</title>
   </head>
   <body>
-    <script></script>
+    <script>
+      function max(numArray) {
+        let max = -Infinity;
+        numArray.forEach((num) => {
+          if (num > max) {
+            max = num;
+          }
+        });
+
+        return max;
+      }
+      function min(numArray) {
+        let min = Infinity;
+        numArray.forEach((num) => {
+          if (num < min) {
+            min = num;
+          }
+        });
+
+        return min;
+      }
+
+      console.log(max([1, 5, -2, 4, 3, 5, 0]));
+      console.log(min([1, 5, -2, 4, 3, 5, 0]));
+
+      function small(numArray) {
+        let smallest = Infinity;
+        numArray.forEach((num) => {
+          if (num >= 0 && num < smallest) {
+            smallest = num;
+          }
+        });
+
+        return smallest;
+      }
+
+      console.log(small([104, 54, -44, 14, 41]));
+    </script>
   </body>
 </html>
