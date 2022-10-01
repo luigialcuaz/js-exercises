@@ -7,6 +7,31 @@
     <title>Exercise 12</title>
   </head>
   <body>
-    <script></script>
+    <script>
+      function aboveFreezing(temps) {
+        const aboveTemp = temps.filter((temp) => {
+          return temp > 0;
+        });
+
+        return aboveTemp;
+      }
+
+      console.log(aboveFreezing([0, 15, -15, -3, 19, 54, 120]));
+
+      function removeRed(foodArray) {
+        return foodArray.filter((food) => {
+          return food.color != "red";
+        });
+      }
+
+      console.log(
+        removeRed([
+          { name: "Apple", color: "red" },
+          { name: "Egg", color: "white" },
+          { name: "Chili", color: "red" },
+          { name: "Eggplant", color: "purple" },
+        ])
+      );
+    </script>
   </body>
 </html>
